@@ -27,4 +27,15 @@ describe Solver do
       expect{@solver.factorial('4')}.to raise_error(ArgumentError)
     end
   end
+
+  context 'These are the tests for the reverse method' do
+
+    it 'The reverse method should raise an error when is not an string' do
+      expect{@solver.reverse(5)}.to raise_error(ArgumentError)
+    end
+
+    it 'Should reverse a string' do
+      expect(@solver.reverse('hello')).to eq('olleh')
+    end
+  end
 end
