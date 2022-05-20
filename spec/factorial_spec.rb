@@ -1,4 +1,4 @@
-require './solver'
+require './solver_class'
 
 describe Solver do 
   before(:all) do 
@@ -20,9 +20,11 @@ describe Solver do
     end
 
     it 'Should raise an exception for any negative integer' do
-      expect(@solver.factorial(-4)).to raise_error(ArgumentError)
+      expect{@solver.factorial(-4)}.to raise_error(ArgumentError)
     end
 
     it 'Should raise an error if argument is not an ineger' do
-      expect(@solver.factorial('4')).to raise_error(ArgumentError)
+      expect{@solver.factorial('4')}.to raise_error(ArgumentError)
     end
+  end
+end
