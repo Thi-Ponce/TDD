@@ -10,4 +10,17 @@ class Solver
 
       string.reverse
     end
+
+    def fizzbuzz(number)
+      raise ArgumentError, 'Invalid input' if !number.is_a?(Integer)
+      if number % 5 == 0 && number % 3 == 0
+         return "fizzbuzz"
+      elsif number % 3 == 0
+        return "fizz"
+      elsif number % 5 == 0
+        return "buzz"
+      else
+        number.to_s
+      end
+    end
 end
