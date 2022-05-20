@@ -53,5 +53,9 @@ describe Solver do
     it 'Returns fizzbuzz when argument is divisible by both 3 and 5' do
       expect(@solver.fizzbuzz(30)).to eq('fizzbuzz')
     end
+
+    it 'Returns the integer as a string if it is not divisible by 3 or 5' do
+      expect(@solver.fizzbuzz(7)).to eq('7')
+    end
   end
 end
