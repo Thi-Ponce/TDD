@@ -1,26 +1,28 @@
 class Solver
-    def factorial(number)
-      return 1 if number == 0
-      raise ArgumentError, 'InvalidNumber' if !number.is_a?(Integer) || number.negative?()
-      factorial(number - 1) * number
-    end
+  def factorial(number)
+    return 1 if number.zero?
+    raise ArgumentError, 'InvalidNumber' if !number.is_a?(Integer) || number.negative?
 
-    def reverse(string)
-      raise ArgumentError, 'Invalid input' if !string.is_a?(String)
+    factorial(number - 1) * number
+  end
 
-      string.reverse
-    end
+  def reverse(string)
+    raise ArgumentError, 'Invalid input' unless string.is_a?(String)
 
-    def fizzbuzz(number)
-      raise ArgumentError, 'Invalid input' if !number.is_a?(Integer)
-      if number % 5 == 0 && number % 3 == 0
-         return "fizzbuzz"
-      elsif number % 3 == 0
-        return "fizz"
-      elsif number % 5 == 0
-        return "buzz"
-      else
-        number.to_s
-      end
+    string.reverse
+  end
+
+  def fizzbuzz(number)
+    raise ArgumentError, 'Invalid input' unless number.is_a?(Integer)
+
+    if (number % 5).zero? && (number % 3).zero?
+      'fizzbuzz'
+    elsif (number % 3).zero?
+      'fizz'
+    elsif (number % 5).zero?
+      'buzz'
+    else
+      number.to_s
     end
+  end
 end

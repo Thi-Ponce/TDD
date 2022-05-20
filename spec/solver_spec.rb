@@ -1,17 +1,16 @@
 require './solver_class'
 
-describe Solver do 
-  before(:all) do 
+describe Solver do
+  before(:all) do
     @solver = Solver.new
   end
 
   context 'These are tests for the factorial method and the solver class' do
-    
     it 'Solver should return a solver' do
       expect(@solver).to be_an_instance_of Solver
     end
 
-    it 'Factorial of 4 should be 24' do 
+    it 'Factorial of 4 should be 24' do
       expect(@solver.factorial(4)).to eq(24)
     end
 
@@ -20,18 +19,17 @@ describe Solver do
     end
 
     it 'Should raise an exception for any negative integer' do
-      expect{@solver.factorial(-4)}.to raise_error(ArgumentError)
+      expect { @solver.factorial(-4) }.to raise_error(ArgumentError)
     end
 
     it 'Should raise an error if argument is not an ineger' do
-      expect{@solver.factorial('4')}.to raise_error(ArgumentError)
+      expect { @solver.factorial('4') }.to raise_error(ArgumentError)
     end
   end
 
   context 'These are the tests for the reverse method' do
-
     it 'The reverse method should raise an error when is not an string' do
-      expect{@solver.reverse(5)}.to raise_error(ArgumentError)
+      expect { @solver.reverse(5) }.to raise_error(ArgumentError)
     end
 
     it 'Should reverse a string' do
@@ -39,10 +37,9 @@ describe Solver do
     end
   end
 
-  context 'These are the tests for fizzbuzz method' do 
-
+  context 'These are the tests for fizzbuzz method' do
     it 'Should raise errors if argument is not an integer' do
-      expect{@solver.fizzbuzz('9')}.to raise_error(ArgumentError)
+      expect { @solver.fizzbuzz('9') }.to raise_error(ArgumentError)
     end
 
     it 'Returns fizz when argument is divisible by 3' do
