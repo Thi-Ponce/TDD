@@ -1,7 +1,7 @@
 class Solver
   def factorial(number)
-    return 1 if number.zero?
     raise ArgumentError, 'InvalidNumber' if !number.is_a?(Integer) || number.negative?
+    return 1 if number.zero?
 
     factorial(number - 1) * number
   end
