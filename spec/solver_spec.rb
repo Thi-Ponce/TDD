@@ -38,4 +38,23 @@ describe Solver do
       expect(@solver.reverse('hello')).to eq('olleh')
     end
   end
+
+  context 'These are the tests for fizzbuzz method' do 
+
+    it 'Should raise errors if argument is not an integer' do
+      expect{@solver.fizzbuzz('9')}.to raise_error(ArgumentError)
+    end
+
+    it 'Returns fizz when argument is divisible by 3' do
+      expect(@solver.fizzbuzz(3)).to eq('fizz')
+    end
+
+    it 'Returns buzz when argument is divisible by 5' do
+      expect(@solver.fizzbuzz(5)).to eq('buzz')
+    end
+
+    it 'Returns fizzbuzz when argument is divisible by both 3 and 5' do
+      expect(@solver.fizzbuzz(30)).to eq('fizzbuzz')
+    end
+  end
 end
